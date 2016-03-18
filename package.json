@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-deploy-streethub-pack",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "The default blueprint for ember-cli addons.",
   "directories": {
     "doc": "doc",
@@ -45,7 +45,6 @@
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.5",
-
     "ember-cli-deploy-build": "0.1.1",
     "ember-cli-deploy-display-revisions": "0.1.1",
     "ember-cli-deploy-gzip": "0.2.1",
