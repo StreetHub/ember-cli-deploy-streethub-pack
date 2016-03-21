@@ -55,6 +55,18 @@ module.exports = function(deployTarget) {
         prefix: '<project>',
         allowOverwrite: true
     };
+    ENV.slack = {
+      webhookURL: process.env.SLACK_DEPLOY_WEBHOOK,
+      channel: '#logs',
+      username: 'wooosh!',
+      didDeploy: function(context) {
+        return function(slack) {
+          return slack.notify({
+            text: 'New deploy: <project>!'
+          });
+        };
+      }
+    }
     // configure other plugins for production deploy target here
   }
 
