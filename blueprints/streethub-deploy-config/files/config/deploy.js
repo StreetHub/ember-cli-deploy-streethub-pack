@@ -15,15 +15,15 @@ module.exports = function(deployTarget) {
         outputPath: 'dist'
     };
     ENV.s3 = {
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+        accessKeyId: process.env.DEPLOY_STAGING_AWS_KEY,
+        secretAccessKey: process.env.DEPLOY_STAGING_AWS_SECRET,
         bucket: '<staging-bucket>',
         region: '<region>',
         prefix: '<project>'
     };
     ENV['s3-index'] = {
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+        accessKeyId: process.env.DEPLOY_STAGING_AWS_KEY,
+        secretAccessKey: process.env.DEPLOY_STAGING_AWS_SECRET,
         bucket: '<staging-bucket>',
         region: '<region>',
         allowOverwrite: true,
@@ -48,15 +48,15 @@ module.exports = function(deployTarget) {
         outputPath: 'dist'
     };
     ENV.s3 = {
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+        accessKeyId: process.env.DEPLOY_PROD_AWS_KEY,
+        secretAccessKey: process.env.DEPLOY_PROD_AWS_SECRET,
         bucket: '<production-bucket>',
         region: '<region>',
         prefix: '<project>'
     };
     ENV['s3-index'] = {
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+        accessKeyId: process.env.DEPLOY_PROD_AWS_KEY,
+        secretAccessKey: process.env.DEPLOY_PROD_AWS_SECRET,
         bucket: '<production-bucket>',
         region: '<region>',
         allowOverwrite: true,
