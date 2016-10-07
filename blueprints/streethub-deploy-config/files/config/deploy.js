@@ -29,6 +29,16 @@ module.exports = function(deployTarget) {
         allowOverwrite: true,
         prefix: '<project>'
     };
+
+    // Uncomment if this project is using ember-cli-sentry
+    // ENV.sentry = {
+    //   publicUrl: '<website-url>',
+    //   sentryUrl: '<sentry-url>',
+    //   sentryOrganizationSlug: '<sentry-organisation>',
+    //   sentryProjectSlug: '<sentry-project>',
+    //   sentryApiKey: '<sentry-api-key>'
+    // }
+
     ENV.slack = {
       webhookURL: process.env.SLACK_DEPLOY_WEBHOOK,
       channel: '#logs',
