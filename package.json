@@ -13,7 +13,7 @@
   },
   "repository": "https://www.github.com/trouva/ember-cli-deploy-streethub-pack",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": "8.*"
   },
   "author": "",
   "license": "MIT",
