@@ -1,26 +1,30 @@
-# Ember-cli-deploy-streethub-pack
+# ember-cli-deploy-streethub-pack
+[![](https://ember-cli-deploy.github.io/ember-cli-deploy-version-badges/plugins/ember-cli-deploy-s3.svg)](http://ember-cli-deploy.github.io/ember-cli-deploy-version-badges/)
 
-This README outlines the details of collaborating on this Ember addon.
+
+An ember-cli-deploy plugin pack to deploy Streethub's applications
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+```bash
+$ ember install ember-cli-deploy
+$ ember install ember-cli-deploy-streethub-pack
+```
 
-## Running
+The necessary set of plugins will be available to ember-cli-deploy and an example `config/deploy.js` file will be generated for you to customize with information for your deployment environments.
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+## What is a plugin pack?
 
-## Running Tests
+A "plugin pack" is a concept supported by ember-cli-deploy that allows a single addon to make multiple plugins available by adding a single direct dependency to your project.
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+## What plugins are made available?
 
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+- ember-cli-deploy-build
+- ember-cli-deploy-display-revisions
+- ember-cli-deploy-gzip
+- ember-cli-deploy-manifest
+- ember-cli-deploy-revision-data
+- ember-cli-deploy-s3
+- ember-cli-deploy-s3-index
+- ember-cli-deploy-sentry
+- ember-cli-deploy-slack
