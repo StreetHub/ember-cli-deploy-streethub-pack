@@ -1,6 +1,6 @@
 /* jshint node: true */
 
-module.exports = function(deployTarget) {
+module.exports = function (deployTarget) {
   var ENV = {
     build: {}
     // include other plugin configuration that applies to all deploy targets here
@@ -9,25 +9,26 @@ module.exports = function(deployTarget) {
   if (deployTarget === 'development') {
     ENV.build.environment = 'development';
   }
+
   if (deployTarget === 'staging') {
     ENV.build = {
-        environment: 'staging',
-        outputPath: 'dist'
+      environment: 'staging',
+      outputPath: 'dist'
     };
     ENV.s3 = {
-        accessKeyId: process.env.DEPLOY_STAGING_AWS_KEY,
-        secretAccessKey: process.env.DEPLOY_STAGING_AWS_SECRET,
-        bucket: '<staging-bucket>',
-        region: '<region>',
-        prefix: '<project>'
+      accessKeyId: process.env.DEPLOY_STAGING_AWS_KEY,
+      secretAccessKey: process.env.DEPLOY_STAGING_AWS_SECRET,
+      bucket: '<staging-bucket>',
+      region: '<region>',
+      prefix: '<project>'
     };
     ENV['s3-index'] = {
-        accessKeyId: process.env.DEPLOY_STAGING_AWS_KEY,
-        secretAccessKey: process.env.DEPLOY_STAGING_AWS_SECRET,
-        bucket: '<staging-bucket>',
-        region: '<region>',
-        allowOverwrite: true,
-        prefix: '<project>'
+      accessKeyId: process.env.DEPLOY_STAGING_AWS_KEY,
+      secretAccessKey: process.env.DEPLOY_STAGING_AWS_SECRET,
+      bucket: '<staging-bucket>',
+      region: '<region>',
+      allowOverwrite: true,
+      prefix: '<project>'
     };
 
     // Uncomment if this project is using ember-cli-sentry
@@ -43,8 +44,8 @@ module.exports = function(deployTarget) {
       webhookURL: process.env.SLACK_DEPLOY_WEBHOOK,
       channel: '#logs',
       username: 'wooosh!',
-      didDeploy: function(context) {
-        return function(slack) {
+      didDeploy: function (context) {
+        return function (slack) {
           return slack.notify({
             text: 'New deploy: <staging-url>!'
           });
@@ -54,30 +55,30 @@ module.exports = function(deployTarget) {
   }
   if (deployTarget === 'production') {
     ENV.build = {
-        environment: 'production',
-        outputPath: 'dist'
+      environment: 'production',
+      outputPath: 'dist'
     };
     ENV.s3 = {
-        accessKeyId: process.env.DEPLOY_PROD_AWS_KEY,
-        secretAccessKey: process.env.DEPLOY_PROD_AWS_SECRET,
-        bucket: '<production-bucket>',
-        region: '<region>',
-        prefix: '<project>'
+      accessKeyId: process.env.DEPLOY_PROD_AWS_KEY,
+      secretAccessKey: process.env.DEPLOY_PROD_AWS_SECRET,
+      bucket: '<production-bucket>',
+      region: '<region>',
+      prefix: '<project>'
     };
     ENV['s3-index'] = {
-        accessKeyId: process.env.DEPLOY_PROD_AWS_KEY,
-        secretAccessKey: process.env.DEPLOY_PROD_AWS_SECRET,
-        bucket: '<production-bucket>',
-        region: '<region>',
-        allowOverwrite: true,
-        prefix: '<project>'
+      accessKeyId: process.env.DEPLOY_PROD_AWS_KEY,
+      secretAccessKey: process.env.DEPLOY_PROD_AWS_SECRET,
+      bucket: '<production-bucket>',
+      region: '<region>',
+      allowOverwrite: true,
+      prefix: '<project>'
     };
     ENV.slack = {
       webhookURL: process.env.SLACK_DEPLOY_WEBHOOK,
       channel: '#logs',
       username: 'wooosh!',
-      didDeploy: function(context) {
-        return function(slack) {
+      didDeploy: function (context) {
+        return function (slack) {
           return slack.notify({
             text: 'New deploy: <production-url>!'
           });
